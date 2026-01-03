@@ -4,6 +4,7 @@ from app.services.weather_service import fetch_weather, fetch_forecast
 from app.core.config import APP_NAME, VERSION
 import re
 from datetime import datetime
+from fastapi.responses import RedirectResponse
 
 
 
@@ -19,7 +20,8 @@ app = FastAPI(
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to the Weather Showing API!"}
+    return RedirectResponse(url="/docs")
+
 
 @app.get("/weather", response_model=WeatherResponse)
 async def get_weather(
