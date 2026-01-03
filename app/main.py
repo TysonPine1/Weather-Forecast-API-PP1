@@ -9,7 +9,7 @@ from fastapi.responses import RedirectResponse
 
 
 app = FastAPI(
-    title = "Weather Showing API",
+    title = "Weather Forecasting API",
     description="API to show weather info based on city and location. Designation WP-1A",
     version  = "1.0",
     contact={
